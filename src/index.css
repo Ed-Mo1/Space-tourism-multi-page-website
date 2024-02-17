@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  box-sizing: border-box;
+}
+.swiper-pagination-bullet {
+  width: 15px;
+  background-color: rgba(255, 255, 255, 0.174);
+  height: 15px;
+}
+.swiper-pagination {
+  text-align: left;
+  bottom: 10% !important;
+  left: 5% !important;
+  gap: 10px;
+}
+.swiper-pagination-bullet-active {
+  background-color: white;
+}
+@layer components {
+  .header {
+    @apply absolute top-0 left-0 py-10 md:py-0 lg:py-10 w-full flex justify-between items-center px-[1rem]
+         md:px-0
+        md:ps-[2rem]
+        lg:ps-[4rem]
+        xl:ps-[5rem];
+  }
+  .home_page {
+    @apply bg-center bg-[url(./assets/home/background-home-mobile.jpg)] md:bg-[url(./assets/home/background-home-tablet.jpg)] lg:bg-[url(./assets/home/background-home-desktop.jpg)] bg-no-repeat bg-cover;
+  }
+  .destination_page {
+    @apply bg-center bg-[url(./assets/destination/background-destination-mobile.jpg)] md:bg-[url(./assets/destination/background-destination-tablet.jpg)] lg:bg-[url(./assets/destination/background-destination-desktop.jpg)] bg-no-repeat bg-cover;
+  }
+  .crew_page {
+    @apply bg-center bg-[url(./assets/crew/background-crew-mobile.jpg)] md:bg-[url(./assets/crew/background-crew-tablet.jpg)] lg:bg-[url(./assets/crew/background-crew-desktop.jpg)] bg-no-repeat bg-cover;
+  }
+  .technology_page {
+    @apply bg-center bg-[url(./assets/technology/background-technology-mobile.jpg)] md:bg-[url(./assets/technology/background-technology-tablet.jpg)] lg:bg-[url(./assets/technology/background-technology-desktop.jpg)] bg-no-repeat bg-cover;
+  }
+}
+
+@layer utilities {
+  .heading-1 {
+    @apply max-md:text-[80px] text-[150px] font-normal font-bellefair;
+  }
+  .heading-2 {
+    @apply text-[56px] md:text-[80px] lg:text-[100px] font-normal font-bellefair;
+  }
+  .heading-3 {
+    @apply text-[24px]  md:text-[40px] lg:text-[56px] font-normal font-bellefair;
+  }
+  .heading-4 {
+    @apply max-md:text-[20px] text-[32px] font-normal font-bellefair;
+  }
+  .heading-5 {
+    @apply max-md:text-[16px] text-[28px] tracking-[4.75px]  font-normal font-barlow_condensed;
+  }
+  .sub_heading_1 {
+    @apply text-white  uppercase text-[28px] font-normal;
+  }
+  .sub_heading_2 {
+    @apply uppercase text-light_shade_blue text-[14px] tracking-[2.35px] font-normal font-barlow_condensed;
+  }
+  .paragraph {
+    @apply text-light_shade_blue w-full md:max-w-[573px] lg:max-w-[444px] max-md:text-[15px] text-[18px] font-normal font-barlow_condensed;
+  }
+  .desktop_nav_links {
+    @apply text-white py-12 block relative before:absolute hover:before:w-full before:h-[3px] before:transition-[width] before:left-0 before:w-0 before:bottom-0 before:bg-white text-[16px] tracking-[2.7px] font-normal font-barlow_condensed;
+  }
+  .mobile_nav_links {
+    @apply text-white py-2 block relative before:absolute hover:before:w-[4px] before:h-full before:transition-[width] before:right-0 before:w-0 before:bottom-0 before:bg-white text-[16px] tracking-[2.7px] font-normal font-barlow_condensed;
+  }
+  .planet_link {
+    @apply uppercase relative text-light_shade_blue text-[16px] tracking-[2.7px] font-normal font-barlow_condensed cursor-pointer hover:text-white before:w-0 hover:before:w-full before:h-[3px] before:transition-[width] before:left-0 before:bottom-[-50%] before:absolute before:bg-white;
+  }
+}

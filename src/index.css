@@ -21,15 +21,18 @@
   background-color: white;
 }
 @layer components {
+  .content{
+    @apply min-h-screen container pb-12 pt-40 flex flex-col gap-24 justify-around lg:flex-row items-center
+  }
   .header {
-    @apply absolute top-0 left-0 py-10 md:py-0 lg:py-10 w-full flex justify-between items-center px-[1rem]
+    @apply z-50 absolute top-0 left-0 py-10 md:py-0 lg:py-10 w-full flex justify-between items-center px-[1rem]
          md:px-0
         md:ps-[2rem]
         lg:ps-[4rem]
         xl:ps-[5rem];
   }
   .home_page {
-    @apply bg-center bg-[url(./assets/home/background-home-mobile.jpg)] md:bg-[url(./assets/home/background-home-tablet.jpg)] lg:bg-[url(./assets/home/background-home-desktop.jpg)] bg-no-repeat bg-cover;
+    @apply  bg-center bg-[url(./assets/home/background-home-mobile.jpg)] md:bg-[url(./assets/home/background-home-tablet.jpg)] lg:bg-[url(./assets/home/background-home-desktop.jpg)] bg-no-repeat bg-cover;
   }
   .destination_page {
     @apply bg-center bg-[url(./assets/destination/background-destination-mobile.jpg)] md:bg-[url(./assets/destination/background-destination-tablet.jpg)] lg:bg-[url(./assets/destination/background-destination-desktop.jpg)] bg-no-repeat bg-cover;

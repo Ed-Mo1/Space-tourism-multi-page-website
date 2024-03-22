@@ -1,9 +1,36 @@
 import MainBtn from "../components/MainBtn";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+const variants = {
+  initial: {
+    opacity: 0.5,
+  },
+  animate: {
+    opacity: 1,
+
+    transition: {
+      duration: 0.5,
+    },
+  },
+  exit: {
+    opacity: 0.5,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 const Home = () => {
+  const navigate = useNavigate();
   return (
-    <div className="home_page">
-      <div className="min-h-screen max-lg:py-40 lg:pt-40 px-4 lg:px-20 xl:px-40 flex flex-col  max-lg:gap-32 lg:flex-row justify-between items-center">
-        <div className="max-lg:text-center max-lg:mt-10">
+    <motion.section
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      className="home_page"
+    >
+      <div className="content">
+        <div className="max-lg:text-center">
           <h5 className="heading-5 text-light_shade_blue ">
             SO, YOU WANT TO TRAVEL TO
           </h5>
@@ -15,11 +42,18 @@ const Home = () => {
             world experience!
           </p>
         </div>
-       <div className="lg:mt-12">
-       <MainBtn text="EXPLORE" />
-       </div>
+        <div className="lg:mt-12">
+          <MainBtn
+            text="EXPLORE"
+            onClick={() =>
+              navigate("/Space-tourism-multi-page-website/destination", {
+                replace: true,
+              })
+            }
+          />
+        </div>
       </div>
-    </div>
+    </motion.section>
   );
 };
 

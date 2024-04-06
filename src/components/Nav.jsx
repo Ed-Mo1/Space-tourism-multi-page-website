@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/shared/logo.svg";
 import hamburger from "../assets/shared/icon-hamburger.svg";
 import close from "../assets/shared/icon-close.svg";
@@ -18,7 +18,9 @@ const Nav = () => {
         id="logo"
         className="flex-grow-[1] relative before:w-[85%] before:h-[1px] max-lg:before:hidden before:bg-white before:absolute before:bg-opacity-50 before:right-[-7%] before:z-10 before:top-1/2 before:translate-y-[-50%] "
       >
-        <img src={logo} className="cursor-pointer" alt="logo" />
+        <Link to="/Space-tourism-multi-page-website">
+          <img src={logo} className="cursor-pointer" alt="logo" />
+        </Link>
       </div>
       <nav className="flex-grow-[1] ">
         <ul className="hidden md:flex justify-start gap-8  bg-white bg-opacity-[4%] backdrop-blur-xl md:ps-20 lg:ps-24">

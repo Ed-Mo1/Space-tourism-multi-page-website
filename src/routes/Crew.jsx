@@ -28,9 +28,8 @@ const variants = {
 
 const animate = {
   initial: { opacity: 0 },
-  animate: { opacity: 1 },
+  animate: { opacity: 1, transition: { duration: 1 } },
   exit: { opacity: 0.5 },
-  transition: { duration: 1 },
 };
 const Crew = () => {
   const [data, setData] = useState(crew[0]);
@@ -48,7 +47,7 @@ const Crew = () => {
       className="crew_page"
     >
       <div className="min-h-screen max-md:pb-20 max-lg:pt-40  lg:pt-56">
-        <PageTitle num1="0" num2="2" text="Pick your destination" />
+        <PageTitle num1="0" num2="2" text="MEET YOUR CREW" />
         <div className="content max-lg:flex-col-reverse pb-0  lg:py-0">
           <div className="flex-1 max-lg:text-center flex flex-col max-md:flex-col-reverse ">
             <div>

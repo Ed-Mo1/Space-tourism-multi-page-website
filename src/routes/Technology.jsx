@@ -30,9 +30,8 @@ const variants = {
 
 const animate = {
   initial: { opacity: 0 },
-  animate: { opacity: 1 },
+  animate: { opacity: 1, transition: { duration: 1 } },
   exit: { opacity: 0.5 },
-  transition: { duration: 1 },
 };
 const Technology = () => {
   const [data, setData] = useState(technology[0]);
@@ -57,10 +56,10 @@ const Technology = () => {
       exit="exit"
       className="technology_page "
     >
-      <div className="min-h-screen max-lg:pb-20 max-lg:pt-40  lg:pt-56">
-        <PageTitle num1="0" num2="3" text="Pick your destination" />
+      <div className="min-h-screen   max-lg:pb-0 max-lg:pt-40  lg:pt-56">
+        <PageTitle num1="0" num2="3" text="SPACE LAUNCH 101" />
         <div className="content max-lg:flex-col-reverse px-0 lg:ps-12 max-w-full">
-          <div className="flex flex-grow-[1] lg:justify-center max-lg:flex-col items-center gap-8">
+          <div className="flex flex-1 lg:justify-center max-lg:flex-col items-center gap-8">
             <div className="flex  flex-row lg:flex-col gap-5">
               {technology.map((item, i) => (
                 <button
@@ -101,26 +100,28 @@ const Technology = () => {
               </motion.p>
             </div>
           </div>
-          <motion.img
-            key={data.images.landscape}
-            variants={animate}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            src={data.images.landscape}
-            alt=""
-            className="w-full lg:hidden"
-          />
-          <motion.img
-            key={data.images.portrait}
-            variants={animate}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            src={data.images.portrait}
-            alt=""
-            className=" max-lg:hidden"
-          />
+          <div className="flex-1 flex justify-end">
+            <motion.img
+              key={data.images.landscape}
+              variants={animate}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              src={data.images.landscape}
+              alt=""
+              className="w-full lg:hidden"
+            />
+            <motion.img
+              key={data.images.portrait}
+              variants={animate}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              src={data.images.portrait}
+              alt=""
+              className=" max-lg:hidden"
+            />
+          </div>
         </div>
       </div>
     </motion.div>
